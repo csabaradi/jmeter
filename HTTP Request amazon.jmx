@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.0 r1840935">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Amazonthread" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">www.amazon.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/s?i=fan-shop&amp;rh=n%3A3375251%2Cn%3A3375301%2Cn%3A3386071%2Cp_n_theme_browse-bin%3A374306011&amp;s=price-desc-rank&amp;lo=grid&amp;qid=1550698244&amp;ref=sr_pg_1</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="accept" elementType="Header">
+              <stringProp name="Header.name">accept</stringProp>
+              <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</stringProp>
+            </elementProp>
+            <elementProp name="accept-encoding" elementType="Header">
+              <stringProp name="Header.name">accept-encoding</stringProp>
+              <stringProp name="Header.value">gzip, deflate, br</stringProp>
+            </elementProp>
+            <elementProp name="accept-language" elementType="Header">
+              <stringProp name="Header.name">accept-language</stringProp>
+              <stringProp name="Header.value">en-GB,en;q=0.8,ro;q=0.6</stringProp>
+            </elementProp>
+            <elementProp name="cache-control" elementType="Header">
+              <stringProp name="Header.name">cache-control</stringProp>
+              <stringProp name="Header.value">max-age=0</stringProp>
+            </elementProp>
+            <elementProp name="referer" elementType="Header">
+              <stringProp name="Header.name">referer</stringProp>
+              <stringProp name="Header.value">https://www.amazon.com/s?i=fan-shop&amp;rh=n%3A3375251%2Cn%3A3375301%2Cn%3A3386071%2Cp_n_theme_browse-bin%3A374306011&amp;s=price-desc-rank&amp;lo=grid&amp;qid=1550698244&amp;ref=sr_pg_1</stringProp>
+            </elementProp>
+            <elementProp name="upgrade-insecure-requests" elementType="Header">
+              <stringProp name="Header.name">upgrade-insecure-requests</stringProp>
+              <stringProp name="Header.value">1</stringProp>
+            </elementProp>
+            <elementProp name="user-agent" elementType="Header">
+              <stringProp name="Header.name">user-agent</stringProp>
+              <stringProp name="Header.value">Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies">
+            <elementProp name="at-main" elementType="Cookie" testname="at-main">
+              <stringProp name="Cookie.value">Atza|IwEBICVDJh7RQ2b-orj8nb1QSrC_O62N1a5jAuQAKkhngu0v-4SEVRdAUvSQymUxKX6zFLxNT7rtqcTWWRdeXQAVvbo7l6m5taZGK8STVoVatTYQxaHoCJD7fC4qjsV_ZDb2_gmOnSxkOoSEW4yvQLCli5nB5F1teYYnGyDafSgc47qL1eRIdDtXJVAdAKZ8cNuZE3d40YLjGPyIq3WuFRylWPFdZSpHQ2NyBd-WA5EDGl5jcAEXpzgcdH2qvoFz9XJmwKRqsU6RjVB9vZkz2JkwKFGeRkBqEYnu3fddJeZ4nw17BzjscxP1sHqdxVHlQbm8tI7NynSHg2axrNbcJdEVOcakYCO4MW0dTYYenYTTk_RbnDman2qNuvrFIVf3FUFyyI3BgRsY4cj64MkVkVC8MJdb</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path"></stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="csm-hit" elementType="Cookie" testname="csm-hit">
+              <stringProp name="Cookie.value">tb:s-N3KR2PVYZ9D8KH5TP7MP|1550702495298&amp;t:1550702495878&amp;adb:adblk_yes</stringProp>
+              <stringProp name="Cookie.domain">www.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="i18n-prefs" elementType="Cookie" testname="i18n-prefs">
+              <stringProp name="Cookie.value">USD</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="sess-at-main" elementType="Cookie" testname="sess-at-main">
+              <stringProp name="Cookie.value">&quot;nlzjGdHHyxmHxVuZPZ+iPFY1JOdDUxILSGv0YSCSVYQ=&quot;</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="session-id" elementType="Cookie" testname="session-id">
+              <stringProp name="Cookie.value">147-6767988-1993861</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="session-id-time" elementType="Cookie" testname="session-id-time">
+              <stringProp name="Cookie.value">2082787201l</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="session-token" elementType="Cookie" testname="session-token">
+              <stringProp name="Cookie.value">xxUWH1olSoWpu3mTBArhZBnXdASiFWWvrV+y0LiFdUbOY1xKAzPeDJEg2PtxHlC1iH9sYeYf88+7ejIir/fykNa4tK0b5f98ZAJBrzwu+TnLigDFbmzYe2Oz6hIsWhKJHxLzHh8NtGnGb955peFxeo+omQlZouKZmdLVtRerK7B4QITEdfmp/7deXvXR4vZIOU3Eu88NNreA1NVbm6iAyPN+GQ0RmMJVY6OZBdG6D4UkzBIaXBoeYvBNxN+DxJhYpapty1DohmA=</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="skin" elementType="Cookie" testname="skin">
+              <stringProp name="Cookie.value">noskin</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="sst-main" elementType="Cookie" testname="sst-main">
+              <stringProp name="Cookie.value">Sst1|PQEJf2K9x2WwDBUVTMmhUVeJCngHOMJJvEPO7cmZVL2nNGKS0RSiqet7hmDbquVi648fBlSejfpmWIaZaNe4kVlUs4uTlHS85u6dvyWacQRJdhi92RpOR6Hp6Jfs3KA6w45ElcK5RN7vsPKpLUbqPuJxLDAOYT_V-8IddKssbwIhKEJTnTESrFu5JPguGo_RR350Bb1rFVHp6SpAFRBy7mrV85QE_PAx5cY1xKRizvd4gQ_4XvCeothl-VVH-OTakJKT1w6y4W2GjClMOtEzW6hNh99xws6Q2UCWedkzKiRjLWH4zE8W19pUPnpcNYDrL_tx</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="ubid-main" elementType="Cookie" testname="ubid-main">
+              <stringProp name="Cookie.value">134-3381502-1581914</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="x-main" elementType="Cookie" testname="x-main">
+              <stringProp name="Cookie.value">&quot;T4b7L?9KmAcTo@WgFv33zFAHOrqnhL2mWmItNkHZvusZp@NYk2K@mXrekXgUEX8@&quot;</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="x-wl-uid" elementType="Cookie" testname="x-wl-uid">
+              <stringProp name="Cookie.value">1E72buo0BdvfVHCGMYbMfFuft+IjoyxTYtfo9zBYdGnhg+sroSJlq5Y8edIqw7STQ0My1DKksLDvSUfvLQdbsgKJO3EAcwoDBItbUjCAoxNwJtpvygRXGHFSliiQk+xAEASnTXme2g6E=</stringProp>
+              <stringProp name="Cookie.domain">.amazon.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+          </collectionProp>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
